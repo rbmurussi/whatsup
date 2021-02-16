@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login"
+    app:startDestination="@id/activity_login">
+
+    <activity
+        android:id="@+id/activity_login"
+        android:name="br.edu.iesb.android2.whatsup.ui.login.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" >
+        <action
+            android:id="@+id/action_activity_login_to_fragment_item"
+            app:destination="@id/fragment_item" />
+    </activity>
+
+    <fragment
+        android:id="@+id/fragment_item"
+        android:name="br.edu.iesb.android2.whatsup.ItemFragment"
+        android:label="fragment_item"
+        tools:layout="@layout/fragment_item" />
+</navigation>

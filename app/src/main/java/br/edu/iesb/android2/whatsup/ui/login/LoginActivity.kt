@@ -14,6 +14,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import br.edu.iesb.android2.whatsup.ItemFragment
 
 import br.edu.iesb.android2.whatsup.R
 
@@ -61,7 +62,7 @@ class LoginActivity : AppCompatActivity() {
             setResult(Activity.RESULT_OK)
 
             //Complete and destroy login activity once successful
-            finish()
+            supportFragmentManager.beginTransaction().replace(R.id.fragment_item, ItemFragment()).commit()
         })
 
         username.afterTextChanged {
