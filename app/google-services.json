@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "454698565921",
+    "project_id": "whatsup-fd534",
+    "storage_bucket": "whatsup-fd534.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454698565921:android:2953a1a6155f81e7b07e60",
+        "android_client_info": {
+          "package_name": "br.edu.iesb.android2.whatsup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "454698565921-o6cbtm21ds2ulbucgjbjhk7i9o4din4m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbRSnVCE2w5wC-fjVQgRBwFH2pvJfGpJg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "454698565921-o6cbtm21ds2ulbucgjbjhk7i9o4din4m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

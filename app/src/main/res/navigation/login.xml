@@ -3,21 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/login"
-    app:startDestination="@id/activity_login">
-
-    <activity
-        android:id="@+id/activity_login"
-        android:name="br.edu.iesb.android2.whatsup.ui.login.LoginActivity"
-        android:label="activity_login"
-        tools:layout="@layout/activity_login" >
-        <action
-            android:id="@+id/action_activity_login_to_fragment_item"
-            app:destination="@id/fragment_item" />
-    </activity>
+    app:startDestination="@id/loginFragment">
 
     <fragment
-        android:id="@+id/fragment_item"
-        android:name="br.edu.iesb.android2.whatsup.ItemFragment"
-        android:label="fragment_item"
-        tools:layout="@layout/fragment_item" />
+        android:id="@+id/loginFragment"
+        android:name="br.edu.iesb.android2.whatsup.view.fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="br.edu.iesb.android2.whatsup.view.activity.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
 </navigation>

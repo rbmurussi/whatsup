@@ -9,4 +9,20 @@
     <string name="invalid_username">Usuario não e valido</string>
     <string name="invalid_password">Senha deve ter 5 characteres</string>
     <string name="login_failed">"Login falhou"</string>
+
+    <!-- Login -->
+    <string name="login_error">Não foi possível efetuar login.</string>
+    <string name="forgot_password">Esqueci a Senha</string>
+    <string name="register">Cadastrar</string>
+    <string name="email">E-mail</string>
+    <string name="password">Senha</string>
+    <string name="login">Login</string>
+    <string name="invalid_email">E-mail inválido</string>
+    <string name="invalid_password_size">A senha deve conter 6 caracteres no mínimo.</string>
+    <string name="email_required">E-mail é obrigatório!</string>
+    <string name="pass_required">Senha é obrigatória.</string>
+    <string name="login_success">Login efetuado com sucesso!</string>
+    <string name="register_success">Registrado com sucesso, confirme no email!</string>
+    <string name="forgot_success">Recuperação de senha enviado para o email!</string>
+    <string name="signingoogle">Sign in with Google</string>
 </resources>
