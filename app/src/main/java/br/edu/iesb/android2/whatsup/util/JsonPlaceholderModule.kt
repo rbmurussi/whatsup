@@ -1,21 +1,22 @@
 package br.edu.iesb.android2.whatsup.util
 
+import br.edu.iesb.android2.whatsup.service.JsonPlaceholderService
 import com.google.gson.GsonBuilder
-//import dagger.Module
-//import dagger.Provides
-//import dagger.hilt.InstallIn
-//import dagger.hilt.components.SingletonComponent
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-//@Module
-//@InstallIn(SingletonComponent::class)
+@Module
+@InstallIn(SingletonComponent::class)
 class JsonPlaceholderModule {
 
-//    @Provides
+    @Provides
     fun createRetrofit(): Retrofit {
         val logInterceptor = HttpLoggingInterceptor()
         logInterceptor.level = HttpLoggingInterceptor.Level.BODY
@@ -39,8 +40,8 @@ class JsonPlaceholderModule {
             .build()
     }
 
-//    @Provides
-    fun provideEndpoint(retrofit: Retrofit) : Endpoint {
-        return retrofit.create(Endpoint::class.java)
+    @Provides
+    fun provideEndpoint(retrofit: Retrofit) : JsonPlaceholderService {
+        return retrofit.create(JsonPlaceholderService::class.java)
     }
 }
