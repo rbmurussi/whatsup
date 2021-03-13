@@ -4,17 +4,14 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import br.edu.iesb.android2.whatsup.R
-import br.edu.iesb.android2.whatsup.util.Endpoint
-import br.edu.iesb.android2.whatsup.util.NetworkUtils
-import br.edu.iesb.android2.whatsup.view.adapter.MyItemRecyclerViewAdapter
 import br.edu.iesb.android2.whatsup.view.fragment.MainFragment
 import br.edu.iesb.android2.whatsup.view.fragment.MapsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_main.*
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

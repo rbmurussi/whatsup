@@ -1,30 +1,22 @@
 package br.edu.iesb.android2.whatsup.viewmodel
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import br.edu.iesb.android2.whatsup.domain.ItemResult
 import br.edu.iesb.android2.whatsup.service.JsonPlaceholderService
-import br.edu.iesb.android2.whatsup.util.NetworkUtils
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import kotlin.coroutines.CoroutineContext
 
-class MainViewModel(val app: Application) : AndroidViewModel(app), CoroutineScope {
+@HiltViewModel
+class MainViewModel @Inject constructor(
+        private val service: JsonPlaceholderService
+) : ViewModel() {
 
-    override val coroutineContext: CoroutineContext = Dispatchers.Main
     val responseView = MutableLiveData<List<ItemResult>>();
 
-//    @Inject
-//    private lateinit var service : JsonPlaceholderService
-    private val retrofit = NetworkUtils.getRetrofitInstance("https://jsonplaceholder.typicode.com")
-
-    fun load() {
-        launch {
-            val service = retrofit.create(JsonPlaceholderService::class.java)
-            responseView.value = service.getPosts()
-        }
+    fun load() = viewModelScope.launch {
+        responseView.value = service.getPosts()
     }
 }
