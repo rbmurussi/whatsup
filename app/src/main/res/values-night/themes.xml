@@ -17,5 +17,7 @@
         <!-- Customize your theme here. -->
 
         <item name="backgroundColor">@color/pink_black</item>
+        
+        <item name="logoImage">@drawable/dialog_night</item>
     </style>
 </resources>
