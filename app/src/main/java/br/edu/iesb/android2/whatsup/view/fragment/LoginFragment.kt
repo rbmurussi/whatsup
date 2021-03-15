@@ -51,13 +51,15 @@ class LoginFragment : Fragment() {
     }
 
     fun register() {
-        viewModel.register()
-        Toast.makeText(context, context?.getString(R.string.register_success), Toast.LENGTH_LONG).show()
+        findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+//        viewModel.register()
+//        Toast.makeText(context, context?.getString(R.string.register_success), Toast.LENGTH_LONG).show()
     }
 
     fun forgotPassword() {
-        viewModel.forgotPassword()
-        Toast.makeText(context, context?.getString(R.string.forgot_success), Toast.LENGTH_LONG).show()
+        findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
+//        viewModel.forgotPassword()
+//        Toast.makeText(context, context?.getString(R.string.forgot_success), Toast.LENGTH_LONG).show()
     }
 }
 
