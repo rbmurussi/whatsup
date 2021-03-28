@@ -3,8 +3,10 @@ package br.edu.iesb.android2.whatsup.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import br.edu.iesb.android2.whatsup.domain.LoginData
 import br.edu.iesb.android2.whatsup.domain.LoginResult
 import br.edu.iesb.android2.whatsup.interactor.LoginInteractor
+import br.edu.iesb.android2.whatsup.util.DataBaseModule
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -17,6 +19,8 @@ class LoginViewModel(
     override val coroutineContext: CoroutineContext = Dispatchers.Main
 
     private val interactor = LoginInteractor(app.applicationContext)
+    private val database = DataBaseModule().createDatabase(app.applicationContext)
+    private val dao = database.getLoginDataDao()
 
     val email = MutableLiveData("")
     val pass = MutableLiveData("")
@@ -41,8 +45,10 @@ class LoginViewModel(
         val pass = pass.value
         launch {
             try {
-                if(email != null && pass != null)
+                if(email != null && pass != null) {
                     interactor.register(email, pass)
+                    dao.insertData(LoginData(email, pass))
+                }
             } catch (e: Exception) {
                 val res = LoginResult("fail", e.localizedMessage)
                 result.value = res
