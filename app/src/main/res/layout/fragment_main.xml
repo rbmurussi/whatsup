@@ -6,22 +6,58 @@
         <variable
             name="value"
             type="br.edu.iesb.android2.whatsup.domain.ItemResult" />
+        <variable
+            name="fragment"
+            type="br.edu.iesb.android2.whatsup.view.fragment.MainFragment" />
     </data>
-    
-    <RelativeLayout
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         tools:context=".view.fragment.MainFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvMainChat"
-            android:padding="4dp"
+            android:layout_width="412dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="100dp"
             android:clipToPadding="false"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:padding="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
             tools:listitem="@layout/chat_card" />
 
-    </RelativeLayout>
-    
+        <Button
+            android:id="@+id/btSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Enviar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvMainChat" />
+
+        <EditText
+            android:id="@+id/etQuestion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="oi"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btSend"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvMainChat" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
-    

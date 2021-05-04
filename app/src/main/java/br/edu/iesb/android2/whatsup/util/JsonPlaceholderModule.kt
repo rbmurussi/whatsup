@@ -21,23 +21,13 @@ class JsonPlaceholderModule {
         val logInterceptor = HttpLoggingInterceptor()
         logInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
-        val client = OkHttpClient.Builder()
-            .addInterceptor(logInterceptor)
-            .callTimeout(1, TimeUnit.MINUTES)
-            .connectTimeout(1, TimeUnit.MINUTES)
-            .readTimeout(1, TimeUnit.MINUTES)
-            .writeTimeout(1, TimeUnit.MINUTES)
-            .build()
-
-        val gsonConfig = GsonBuilder()
-            .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
-            .create()
+        val client = OkHttpClient.Builder().addInterceptor(logInterceptor).build()
 
         return Retrofit.Builder()
-            .client(client)
-            .baseUrl("https://jsonplaceholder.typicode.com/")
-            .addConverterFactory(GsonConverterFactory.create(gsonConfig))
-            .build()
+                .client(client)
+                .baseUrl("https://dflowapp.herokuapp.com/api/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
     }
 
     @Provides

@@ -7,8 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import br.edu.iesb.android2.whatsup.domain.ItemResult
 import br.edu.iesb.android2.whatsup.R
+import br.edu.iesb.android2.whatsup.domain.Response
+import br.edu.iesb.android2.whatsup.domain.Retorno
+import br.edu.iesb.android2.whatsup.viewmodel.MainViewModel
 
-class MyItemRecyclerViewAdapter(private val values: List<ItemResult>?) :
+class MyItemRecyclerViewAdapter(private val values: List<Retorno>?) :
     RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -20,8 +23,8 @@ class MyItemRecyclerViewAdapter(private val values: List<ItemResult>?) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values?.get(position)
         if(item != null) {
-            holder.textView1.text = item.userId
-            holder.textView2.text = item.title
+            holder.textView1.text = item.pergunta
+            holder.textView2.text = item.resposta
         }
     }
 
